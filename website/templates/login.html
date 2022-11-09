@@ -1,11 +1,11 @@
 {% extends "base.html" %} {% block title %}LOGIN{% endblock %}
 {% block content %} 
-<h1>This is a login page.</h1>
+<h1 style="font-family:Thasadith-Bold; font-weight: bold">This is a login page.</h1>
 {{text}}
 
 
 <form method="POST">
-    <h3 allign = 'center'> Login </h3>
+    <h3 align = 'center'> Login </h3>
     <div class = 'form-group'>
         <label for = 'email'> Email Address</label>
         <input type = 'email' class = 'form-control' id = 'email' name = 'email' placeholder="example@email.com"/>
@@ -17,12 +17,9 @@
         
     </div>
     <br />
-    <button type="submit" class = 'btn btn-primary'>Login</button>
+    <div align = 'center'><button type="submit" class = 'btn btn-primary' align = 'center'>Login</button></div>
+    
 </form>
 
 {% endblock %}
-{% block about %}ABOUT
-    
-    <p>{{version}}</p>
-    
-{% endblock %}
+

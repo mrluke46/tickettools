@@ -1,8 +1,23 @@
 {% extends "base.html" %} {% block title %}HOME{% endblock %}
-{% block content %} <h1>This is a home page.</h1>{% endblock %}
+{% block content %} <h1 style="font-family:Thasadith-Bold; font-weight: bold">This is a home page.</h1>
+<h2 style="font-family:Thasadith-Italic; font-weight: bold" align ="center">Notes</h2>
+<p style="font-family:Thasadith-Bold; font-weight: bold"><span style="color:blue" >Logged-in as {{user.email}}</span></p>
+<ul class = "list-group list-group-flush" id = "notes">
+    {% for note in user.notes %}
+    <li class = "list-group-item">
+        {{ note.data }}
+        <button type="button" class = "close" onclick="deleteNote({{note.id}})">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </li> 
+    {% endfor %}
+</ul>
 
-{% block about %}ABOUT
-    
-    <p>{{version}}</p>
-    
+<form method="POST">
+    <textarea name ="note" id = "note" class = "form-control" placeholder="Type here"></textarea>
+    <br>
+    <div align="center">
+        <button type ='submit' class ="btn btn-primary"> Add Note</button>
+    </div>
+</form>
 {% endblock %}
